@@ -1,3 +1,10 @@
+<?php 
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +27,7 @@
         <table class="table table-light">
         <thead>
             <tr>
-            <th scope="col">NIM</th>
+            <th scope="col">NIMm</th>
             <th scope="col">NAMA MAHASISWA</th>
             <th scope="col">JURUSAN</th>
             <th scope="col">PRODI</th>
