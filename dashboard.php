@@ -41,9 +41,6 @@
                 <th scope="col"></th>
                 <th scope="col"></th>
                 <th scope="col"></th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-                <th scope="col"></th>
             </tr>
         </tbody>
     </table>
