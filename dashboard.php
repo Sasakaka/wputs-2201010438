@@ -27,7 +27,7 @@
         <table class="table table-light">
         <thead>
             <tr>
-            <th scope="col">NIMm</th>
+            <th scope="col">NIM</th>
             <th scope="col">NAMA MAHASISWA</th>
             <th scope="col">JURUSAN</th>
             <th scope="col">PRODI</th>
@@ -36,7 +36,15 @@
             </tr>
         </thead>
         <tbody class="table-group-divider">
-            
+            <tr>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
         </tbody>
     </table>
     </div>
