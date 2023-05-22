@@ -117,8 +117,8 @@
                             <th scope="col"><?php echo $data_tabel[$i]['gender'] ?></th>
                             <th scope="col"><?php echo $data_tabel[$i]['tanggal_lahir'] ?></th>
                             <th scope="col">
-                                <a href="ubah.php" class="btn btn-primary">Update</a>
-                                <a href="hapus.php" class="btn btn-danger">Delete</a>
+                                <a href="ubah.php?id=<?php echo $data_tabel[$i]['nim'] ?>" class="btn btn-primary">Update</a>
+                                <a href="hapus.php?id=<?php echo $data_tabel[$i]['nim'] ?>" class="btn btn-danger">Delete</a>
                                 
                             </th>
                         </tr>
