@@ -40,6 +40,49 @@
     mysqli_close($mysqli);
 ?>
 
+<?php
+    require_once('koneksi.php');
+
+    // Delete Data
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        $id = $_POST['nim'];
+        $nama = $_POST['nama'];
+        $prodi = $_POST['prodi'];
+        $gender = $_POST['gender'];
+        $jurusan = $_POST['jurusan'];
+        $tanggal_lahir = $_POST['tanggal_lahir'];
+
+        $query = "DELETE FROM data_mahasiswa WHERE nim = '$id'";
+
+            if(mysqli_query($mysqli, $query)) {
+                $_SESSION['alert'] = 'hapus';
+ 
+                header("Location: dashboard.php");
+                exit;
+            }
+            else{
+            echo "Error deleting record: " . mysqli_error($conn);
+            }
+    }
+
+    // // Sisteam Read Data
+    $nim = mysqli_real_escape_string($mysqli, $_GET['id']);
+    $sql = "SELECT * FROM data_mahasiswa WHERE nim = '$nim'";
+
+    $result = mysqli_query($mysqli, $sql);
+
+    // Cek Data
+    if (mysqli_num_rows($result) > 0) {
+        $data = mysqli_fetch_assoc($result);
+    }
+    else {
+        echo "Data tidak ditemukan.";
+        $data = [];
+    }
+
+    mysqli_close($mysqli);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -91,7 +134,7 @@
         <hr>
 
     <div class="add">
-        <form action="delete.php?id=<?= $data['nim']; ?>"" method="POST" class="shadow p-3 mb-5 bg-body-tertiary rounded">
+        <form action="hapus.php?id=<?= $data['nim']; ?>" method="POST" class="shadow p-3 mb-5 bg-body-tertiary rounded">
             <div class="mb-3 col-6 ">
                 <label class="form-label" for="nim">NIM</label>
                 <input type="number" class="form-control" id="nim" name="nim" value="<?= $data['nim'] ?>">
