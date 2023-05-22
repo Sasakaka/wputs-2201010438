@@ -1,8 +1,9 @@
 <?php
-    include("koneksi.php");
-
-
-    $mysqli = new mysqli(DBHOST,DBUSER,DBPASS,DBNAME);
+    $DB_HOST = 'localhost';
+    $DB_USER = 'root';
+    $DB_PASS = '';
+    $DB_NAME = 'db_kampus';
+    $mysqli = new mysqli($DB_HOST, $DB_USER, $DB_PASS);
 
     if($mysqli->connect_error){
         die("Koneksi Gagal: " . $mysqli->connect_error);
@@ -18,7 +19,7 @@
     };
 
 
-    // require_once('koneksi.php');
+    require_once('koneksi.php');
     // Mengkoneksikan Database Yang Berhasil Dibuat!
     mysqli_select_db($mysqli, "db_kampus");
 
